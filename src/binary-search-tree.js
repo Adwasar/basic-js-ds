@@ -44,6 +44,8 @@ class BinarySearchTree {
   }
 }
 
+// test
+
 module.exports = {
   BinarySearchTree
 };
