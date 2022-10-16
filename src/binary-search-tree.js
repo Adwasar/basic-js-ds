@@ -9,15 +9,15 @@ const { Node } = require('../extensions/list-tree.js');
 
 class BinarySearchTree {
   constructor() {
-    this.root = null;
+    this.biRoot = null;
   }
 
   root() {
-    return this.root;
+    return this.biRoot;
   }
 
   add(data) {
-    this.root = addWithin(this.root, data);
+    this.biRoot = addWithin(this.biRoot, data);
 
     function addWithin(node, data) {
       if (!node) {
@@ -39,7 +39,7 @@ class BinarySearchTree {
   }
 
   has(data) {
-    return searchWithin(this.root, data);
+    return searchWithin(this.biRoot, data);
 
     function searchWithin(node, data) {
       if (!node) {
@@ -57,7 +57,7 @@ class BinarySearchTree {
   }
 
   find(data) {
-    return findNode(this.treeRoot, data);
+    return findNode(this.biRoot, data);
 
     function findNode(node, data) {
       if (!node) {
@@ -73,7 +73,7 @@ class BinarySearchTree {
   }
 
   remove(data) {
-    this.root = removeNode(this.root, data);
+    this.biRoot = removeNode(this.biRoot, data);
 
     function removeNode(node, data) {
       if (!node) {
@@ -115,11 +115,11 @@ class BinarySearchTree {
   }
 
   min() {
-    if (!this.root) {
+    if (!this.biRoot) {
       return; 
     }
 
-    let node = this.root;
+    let node = this.biRoot;
       while (node.left) {
       node = node.left;
     }
@@ -128,11 +128,11 @@ class BinarySearchTree {
   }
 
   max() {
-    if (!this.root) {
+    if (!this.biRoot) {
       return;
     }
 
-    let node = this.root;
+    let node = this.biRoot;
     while (node.right) {
       node = node.right;
     }
@@ -141,7 +141,14 @@ class BinarySearchTree {
   }
 }
 
-// test
+let tree = new BinarySearchTree();
+tree.add(1);
+tree.add(2);
+tree.add(3);
+tree.add(4);
+tree.add(5);
+console.log(tree.max());
+
 
 module.exports = {
   BinarySearchTree
